@@ -3,8 +3,6 @@ import {
   OnInit,
   Output,
   EventEmitter,
-  AfterViewChecked,
-  AfterViewInit,
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SpaceXDataService } from '../space-x-data.service';
@@ -76,7 +74,9 @@ export class SpaceXFiltersComponent implements OnInit {
     this.http.get(url).subscribe((res: any) => {
       this.spaceXApiData.setSpaceXData(res);
       this.finishedLoading.emit(true);
-      this.spinner.hide();
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     });
   }
 

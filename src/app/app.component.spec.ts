@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { SpaceXFiltersComponent } from './space-x-filters/space-x-filters.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpaceXLaunchDetailsComponent } from './space-x-launch-details/space-x-launch-details.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 describe('AppComponent', () => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxSpinnerModule
       ],
       declarations: [
         AppComponent,
