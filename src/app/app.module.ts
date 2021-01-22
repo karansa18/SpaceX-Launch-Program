@@ -8,6 +8,7 @@ import { SpaceXFiltersComponent } from './space-x-filters/space-x-filters.compon
 import { SpaceXLaunchTileComponent } from './space-x-launch-tile/space-x-launch-tile.component';
 import { SpaceXLaunchDetailsComponent } from './space-x-launch-details/space-x-launch-details.component';
 import { SpaceXDataService } from './space-x-data.service';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SpaceXDataService } from './space-x-data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [SpaceXDataService,
     HttpClientModule],

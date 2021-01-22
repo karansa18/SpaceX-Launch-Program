@@ -12,17 +12,26 @@
       <div class="launch-sub-header">Successful Launch</div>
       <hr />
       <div class="launch-btn-section">
-        <button class="launch-btn" value="true" (click)="onLaunchSuccess($event,true)">True</button>
-        <button class="launch-btn" value="false" (click)="onLaunchSuccess($event,false)">False</button>
+        <button class="launch-btn" value="true" (click)="onLaunchSuccess($event)">True</button>
+        <button class="launch-btn" value="false" (click)="onLaunchSuccess($event)">False</button>
       </div>
     </div>
     <div class="launch-landing">
       <div class="launch-sub-header">Successful Landing</div>
       <hr />
       <div class="launch-btn-section">
-        <button class="launch-btn" value="true" (click)="onLandingSuccess($event,true)">True</button>
-        <button class="launch-btn" value="false" (click)="onLandingSuccess($event,false)">False</button>
+        <button class="launch-btn" value="true" (click)="onLandingSuccess($event)">True</button>
+        <button class="launch-btn" value="false" (click)="onLandingSuccess($event)">False</button>
       </div>
     </div>
   </div>
 </div>
+<ngx-spinner
+  bdColor="rgba(1,1,1,0.5)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+<img src='../../assets/spinner.gif' style="width: 200px; height: 200px;" />" 
+</ngx-spinner>
+
