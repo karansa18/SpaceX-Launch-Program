@@ -2,9 +2,10 @@
 <div class="app-container">
   <header>SpaceX Launch Program</header>
   <div class="spaceX-container">
-    <app-space-x-filters (finishedLoading)="hasLoaded = $event"></app-space-x-filters>
+    <app-space-x-filters (finishedLoading)="hasLoaded = $event" ></app-space-x-filters>
     <app-space-x-launch-details id="container-width" *ngIf="hasLoaded"></app-space-x-launch-details>
   </div>
+ 
   <footer><b>Developed by:</b> Karan Sachdeva</footer>
 </div>
 

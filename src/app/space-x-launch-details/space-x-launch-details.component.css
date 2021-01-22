@@ -19,6 +19,7 @@
     font-weight: bold;
 }
 
+
 @media  (min-width:1024px){
     .tile-container{
         flex: 0 0 calc(100% / 4 - 20px);

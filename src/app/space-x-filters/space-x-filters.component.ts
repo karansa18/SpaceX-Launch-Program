@@ -83,7 +83,8 @@ export class SpaceXFiltersComponent implements OnInit,AfterViewInit {
       url = "https://api.spacexdata.com/v3/launches?limit=100";
     }
 
-    this.http.get(url).subscribe((res:any) => {
+    this.http.get(url)
+    .subscribe((res:any) => {
       this.spaceXApiData.setSpaceXData(res);
       this.finishedLoading.emit(true);
     });

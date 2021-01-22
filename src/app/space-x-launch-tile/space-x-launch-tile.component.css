@@ -37,8 +37,9 @@
 .mission-details label{
     font-weight: bold;
 }
-.missions>li, #launch-year, #launch-success, #launch-land{
+.missions > div>li, #launch-year, #launch-success, #launch-land{
     color: #2f5596;
     margin-left: 10px;
+    font-weight: 600;
 }
 

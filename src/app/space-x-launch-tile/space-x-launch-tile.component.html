@@ -7,11 +7,14 @@
         <div class="mission-name">{{tileData?.mission_name + ' #' + tileData?.flight_number}}</div>
         <div class="mission-details" id="mission-id">
             <label for="mission-ids">Mission Ids:</label>
-            <div *ngIf="tileData?.mission_id.length > 0 ">
                 <ul class="missions">
+               <div *ngIf ="tileData?.mission_id.length != 0">
                 <li *ngFor="let missionId of tileData?.mission_id">{{missionId}}</li>
+               </div> 
+               <div *ngIf ="tileData?.mission_id.length == 0">
+                <li>NA</li>
+               </div>
             </ul>
-            </div>
         </div>
         <div class="mission-details">
             <label for="LaunchYear">Launch Year:</label>
