@@ -73,10 +73,9 @@ export class SpaceXFiltersComponent implements OnInit {
     this.spinner.show();
     this.http.get(url).subscribe((res: any) => {
       this.spaceXApiData.setSpaceXData(res);
+      this.spinner.hide();
       this.finishedLoading.emit(true);
-      setTimeout(() => {
-        this.spinner.hide();
-      }, 1000);
+      
     });
   }
 
