@@ -1,0 +1,28 @@
+<div class="filter-container">
+  <div class="filter-header">Filters</div>
+  <div class="launch-section">
+    <div class="launch-year">
+      <div class="launch-sub-header">Launch Year</div>
+      <hr />
+      <div class="launch-btn-section">
+        <button class="launch-btn" [id]="year" *ngFor="let year of years" (click)="onYearSelect($event,year)">{{ year }}</button>
+      </div>
+    </div>
+    <div class="launch-successful">
+      <div class="launch-sub-header">Successful Launch</div>
+      <hr />
+      <div class="launch-btn-section">
+        <button class="launch-btn" value="true" (click)="onLaunchSuccess($event,true)">True</button>
+        <button class="launch-btn" value="false" (click)="onLaunchSuccess($event,false)">False</button>
+      </div>
+    </div>
+    <div class="launch-landing">
+      <div class="launch-sub-header">Successful Landing</div>
+      <hr />
+      <div class="launch-btn-section">
+        <button class="launch-btn" value="true" (click)="onLandingSuccess($event,true)">True</button>
+        <button class="launch-btn" value="false" (click)="onLandingSuccess($event,false)">False</button>
+      </div>
+    </div>
+  </div>
+</div>

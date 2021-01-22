@@ -1,0 +1,44 @@
+.tile-data-container{
+    word-wrap: break-word;
+    padding: 10px;
+}
+
+.mission-name{
+    font-size: 20px;
+    margin: 10px 0;
+    color: #2f5596;
+    font-weight: bold;
+}
+.mission-img-container{
+    background-color: #eee;
+    height: 200px;
+    text-align: center;
+}
+.mission-img-container img{
+    height: 195px;
+    max-width: 100%;
+}
+
+.mission-details{
+    display: flex;
+}
+.mission-details > * {
+     margin: 5px 0;
+     font-size: 14px;
+}
+#mission-id {
+    display: inline;
+}
+.missions {
+     margin: 0 !important ;
+     padding-left: 10px !important;
+}
+
+.mission-details label{
+    font-weight: bold;
+}
+.missions>li, #launch-year, #launch-success, #launch-land{
+    color: #2f5596;
+    margin-left: 10px;
+}
+

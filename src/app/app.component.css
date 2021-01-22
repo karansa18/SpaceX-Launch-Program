@@ -1,0 +1,32 @@
+.app-container{
+    max-width: 1440px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.spaceX-container{
+    display: flex;
+    
+}
+
+@media(max-width:700px){
+    .spaceX-container{
+        display: inline;
+    }
+}
+
+header{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 12px;
+    text-align: left;
+}
+footer{
+    font-size: 15px;
+    margin: 10px 0 ;
+    text-align: center;
+}
+
+#container-width{
+    width: 100%;
+}

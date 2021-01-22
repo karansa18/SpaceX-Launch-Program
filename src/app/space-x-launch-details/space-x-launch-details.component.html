@@ -1,0 +1,5 @@
+
+<div class="launch-detail-container"  >
+    <app-space-x-launch-tile  class="tile-container" *ngFor="let data of spaceXData" [tileData]="data" ></app-space-x-launch-tile>
+</div>
+<div class="no-data" *ngIf="spaceXData.length == 0">No data Available</div>

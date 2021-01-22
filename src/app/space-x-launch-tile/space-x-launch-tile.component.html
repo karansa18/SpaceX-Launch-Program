@@ -1,0 +1,30 @@
+<div class="tile-data-container"  >
+    <div class="mission-img-container">
+        <img class="mission-img" [src]="tileData?.links.mission_patch_small" [alt]="tileData?.mission_name" >
+    </div>
+
+    <div class="mission-detail-container">
+        <div class="mission-name">{{tileData?.mission_name + ' #' + tileData?.flight_number}}</div>
+        <div class="mission-details" id="mission-id">
+            <label for="mission-ids">Mission Ids:</label>
+            <div *ngIf="tileData?.mission_id.length > 0 ">
+                <ul class="missions">
+                <li *ngFor="let missionId of tileData?.mission_id">{{missionId}}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="mission-details">
+            <label for="LaunchYear">Launch Year:</label>
+            <div id="launch-year">{{tileData?.launch_year}}</div>
+        </div>
+        <div class="mission-details">
+            <label for="LaunchSuccess">Successful Launch:</label>
+            <div id="launch-success">{{tileData?.launch_success}}</div>
+        </div>
+        <div class="mission-details">
+            <label for="LauchLand">Successful Landing:</label>
+            <div id="launch-land">{{tileData?.rocket.first_stage.cores[0].land_success}}</div>
+        </div>
+      
+    </div>
+</div>
