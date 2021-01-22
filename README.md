@@ -30,9 +30,9 @@ Run ng test to execute the unit tests via [Karma](https://karma-runner.github.io
 
 ## Desktop View
 
-![SpaceX launch program](https://github.com/karansa18/Spacex-Launch-Program/tree/main/src/assets/desktop_view.png)*Desktop View of the app*
+![SpaceX launch program](/desktop_view.png)*Desktop View of the app*
 
 ## Mobile View 
 
-![SpaceX launch program](https://github.com/karansa18/Spacex-Launch-Program/tree/main/src/assets/mobile_view.png)*Mobile View of the app*
+![SpaceX launch program](/mobile_view.png)*Mobile View of the app*
 
