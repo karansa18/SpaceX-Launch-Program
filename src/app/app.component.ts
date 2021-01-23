@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   hasLoaded: boolean = false;
-  loading: boolean = true;
 }
