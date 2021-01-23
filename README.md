@@ -8,7 +8,7 @@ This is a small project application which would help users list and browse all l
 ### Clone the repo
 ```bash
 git clone https://github.com/karansa18/Spacex-Launch-Program
-cd intern-angular
+cd Spacex-Launch-Program-main
 ```
 ## Install npm packages
 Install the npm packages described in the package.json and verify that it works:
