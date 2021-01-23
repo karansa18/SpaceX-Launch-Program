@@ -15,7 +15,7 @@ cd Spacex-Launch-Program-main
 Install the npm packages described in the package.json and verify that it works:
 ```bash
 npm install
-ng server
+ng serve
 ```
 Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
