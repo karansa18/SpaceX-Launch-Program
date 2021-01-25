@@ -5,7 +5,7 @@
       <div class="launch-sub-header">Launch Year</div>
       <hr />
       <div class="launch-btn-section">
-        <button class="launch-btn" [id]="year" *ngFor="let year of years" (click)="onYearSelect($event,year)">{{ year }}</button>
+        <button class="launch-btn" [id]="year" *ngFor="let year of years" [value]="year" (click)="onYearSelect($event)">{{ year }}</button>
       </div>
     </div>
     <div class="launch-successful">

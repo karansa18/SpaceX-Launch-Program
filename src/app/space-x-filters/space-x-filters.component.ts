@@ -52,21 +52,20 @@ export class SpaceXFiltersComponent implements OnInit {
   async spaceXData() {
     const BASE_URL = 'https://api.spaceXdata.com/v3/launches?limit=100';
     let url = '';
-    let regex = /['"]+/g;
     if (this.selectedYear && this.selectedLaunch && this.selectedLand) {
-      url = `${BASE_URL}&launch_success=${this.selectedLaunch.replace( regex, '')}&land_success=${this.selectedLand.replace(regex, '')}&launch_year=${this.selectedYear}`;
+      url = `${BASE_URL}&launch_success=${this.selectedLaunch}&land_success=${this.selectedLand}&launch_year=${this.selectedYear}`;
     } else if (this.selectedLaunch && this.selectedLand) {
-      url = `${BASE_URL}&launch_success=${this.selectedLaunch.replace( regex, '')}&land_success=${this.selectedLand.replace(regex, '')}`;
+      url = `${BASE_URL}&launch_success=${this.selectedLaunch}&land_success=${this.selectedLand}`;
     } else if (this.selectedLaunch && this.selectedYear) {
-      url = `${BASE_URL}&launch_success=${this.selectedLaunch.replace(regex,'')}&launch_year=${this.selectedYear}`;
+      url = `${BASE_URL}&launch_success=${this.selectedLaunch}&launch_year=${this.selectedYear}`;
     } else if (this.selectedYear && this.selectedLand) {
-      url = `${BASE_URL}&launch_year=${this.selectedYear}&land_success=${this.selectedLand.replace(regex, '')}`;
+      url = `${BASE_URL}&launch_year=${this.selectedYear}&land_success=${this.selectedLand}`;
     } else if (this.selectedYear) {
       url = `${BASE_URL}&launch_year=${this.selectedYear}`;
     } else if (this.selectedLaunch) {
-      url = `${BASE_URL}&launch_success=${this.selectedLaunch.replace(regex,'')}`;
+      url = `${BASE_URL}&launch_success=${this.selectedLaunch}`;
     } else if (this.selectedLand) {
-      url = `${BASE_URL}&land_success=${this.selectedLand.replace(regex,'')}`;
+      url = `${BASE_URL}&land_success=${this.selectedLand}`;
     } else {
       url = `${BASE_URL}`;
     }
@@ -79,53 +78,41 @@ export class SpaceXFiltersComponent implements OnInit {
     });
   }
 
-  onYearSelect(e, year) {
+  onYearSelect(e) {
     let clickedElement = e.target;
-    this.selectedYear = +year;
-    if (clickedElement.nodeName === 'BUTTON') {
-      let isCertainButtonAlreadyActive = clickedElement.parentElement.querySelector(
-        '.active'
-      );
-      // if a Button already has Class: .active
-      if (isCertainButtonAlreadyActive) {
-        isCertainButtonAlreadyActive.classList.remove('active');
-      }
-
-      clickedElement.className += ' active';
-      this.spaceXData();
-    }
+    this.selectedYear = this.toggleActiveClass(clickedElement);
+    this.spaceXData();
   }
   onLaunchSuccess(e) {
     let clickedElement = e.target;
-    this.selectedLaunch = e.target.value;
-    if (clickedElement.nodeName === 'BUTTON') {
-      let isCertainButtonAlreadyActive = clickedElement.parentElement.querySelector(
-        '.active'
-      );
-      // if a Button already has Class: .active
-      if (isCertainButtonAlreadyActive) {
-        isCertainButtonAlreadyActive.classList.remove('active');
-      }
-
-      clickedElement.className += ' active';
-    }
+    this.selectedLaunch = this.toggleActiveClass(clickedElement);
     this.spaceXData();
   }
 
   onLandingSuccess(e) {
     let clickedElement = e.target;
-    this.selectedLand = e.target.value;
+    this.selectedLand = this.toggleActiveClass(clickedElement);
+    this.spaceXData();
+  }
+
+  toggleActiveClass(clickedElement){
+    let selectedValue = null;
+    let regex = /['"]+/g;
     if (clickedElement.nodeName === 'BUTTON') {
+      if(clickedElement.classList.contains('active')){
+         clickedElement.classList.remove('active');
+      }
+      else{
       let isCertainButtonAlreadyActive = clickedElement.parentElement.querySelector(
         '.active'
       );
-      // if a Button already has Class: .active
       if (isCertainButtonAlreadyActive) {
         isCertainButtonAlreadyActive.classList.remove('active');
       }
-
       clickedElement.className += ' active';
-      this.spaceXData();
+      selectedValue = clickedElement.value.replace(regex,'');
+    }
+    return selectedValue;
     }
   }
 }
